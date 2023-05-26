@@ -39,7 +39,9 @@ $result = $connexion -> query ($sql);
 
 while ($ligne = $result -> fetch_array()){
     if ($ligne['login'] == $login && $ligne['mdp'] == md5($password)){
-header('Location: acceuil.php');
+        session_start();
+        $_SESSION['login']= $login;
+        header('Location: acceuil.php');
     }
     else {
         echo " <script> alert(' login ou mot de passe incorrect ') </script> ";

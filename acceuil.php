@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include "connexion.php";?>
 
 <!DOCTYPE html>
@@ -11,6 +12,8 @@
 </head>
 
   <body>
+    <?php echo "Bienvenue ".$_SESSION['login']."<br>";  ?>
+<a href="deconnexion.php">Se déconncter</a>
 <?php  
 $sql= "select * from produits";
 $resultat = $connexion -> query($sql);
