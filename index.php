@@ -3,27 +3,24 @@
 
 <head>
     <title> Page de connexion</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
-<form action="index.php" method= "post">
-    <table>
-        <tr>
-            <td> Login : </td>
-            <td> <input type="text" name="login"></td>
-        </tr>
-        <tr>
-            <td>  Mot de passe : </td>
-            <td><input type="password" name="password"></td>
-        </tr>
-        <tr>
-            <td> <input type="submit" value="Se connecter" name="OK"> </td>
-            <td>  <input type="reset" value="Reset"> </td>
-        </tr>
-    </table>
-  
-</form>
+<body><div class="container">
+    <form action="index.php" method="post">
+      <h2>Connexion</h2>
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" id="username" name="login" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <input type="submit" value="Se connecter" name= "OK">
+    </form>
+  </div>
 </body>
 </html>
 
