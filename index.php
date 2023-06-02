@@ -38,6 +38,8 @@ while ($ligne = $result -> fetch_array()){
     if ($ligne['login'] == $login && $ligne['mdp'] == md5($password)){
         session_start();
         $_SESSION['login']= $login;
+        $_SESSION['id']= $ligne['id'];
+        $_SESSION['theme']= $ligne['theme'];
         header('Location: acceuil.php');
     }
     else {

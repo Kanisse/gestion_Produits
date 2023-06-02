@@ -8,16 +8,33 @@
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="bootstrap.min.css">  
+  <link rel="stylesheet" href="style.css"> 
+  <?php 
+  $theme = $_SESSION['theme'];
+  echo '<link rel="stylesheet" href="'.$theme.'">' ?>
 </head>
+
+<header>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Produits</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="login"><a href="#"><img src="login-icon.png" alt="Connexion"></a></li>
+      </ul>
+    </nav>
+  </header>
+  
 
   <body>
     <?php echo "Bienvenue ".$_SESSION['login']."<br>";  ?>
 <a href="deconnexion.php">Se déconncter</a>
 <?php  
-$sql= "select * from produits";
+$id = $_SESSION['id'];
+$sql= "select * from produits where id_user=$id";
 $resultat = $connexion -> query($sql);
 ?>
+
 
 <a href="Ajouter.php" class="btn btn-primary">Ajouter</a>
 <table class="table">
